@@ -394,3 +394,17 @@ class ChoosePickerButtonSheet() : BottomSheetDialogFragment(),
 </shape>
 ```
 
+### activity or fragment 
+```
+ val imagePicker =  ImagePicker(this)
+        imagePicker._bitmapLivedata.observe(this) {
+            imageView.setImageBitmap(it)
+        }
+        val choosePickerButtonSheet = ChoosePickerButtonSheet.getInstance(imagePicker = imagePicker)
+        imageView.setOnClickListener {
+            choosePickerButtonSheet.show(supportFragmentManager, "tag")
+        }
+```
+
+
+##### reference https://github.com/ronnieotieno/Ronnie-Image-Picker
